@@ -9,4 +9,4 @@ keys_dir: "{{ playbook_dir }}/keys"
 ec2_key_name: "{{ cluster_name_verbose }}"
 ec2_key_file: "{{ keys_dir }}/{{ ec2_key_name }}.pem"
 
-letsencrypt_cert_generation: yes
+letsencrypt_cert_generation: true

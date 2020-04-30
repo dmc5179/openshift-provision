@@ -26,7 +26,7 @@
     entity: "{{ ansible_user }}"
     etype: user
     permissions: rx
-    recursive: yes
-    follow: yes
+    recursive: true
+    follow: true
     state: present
   become: true

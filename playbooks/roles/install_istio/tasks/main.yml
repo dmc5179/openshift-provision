@@ -14,10 +14,10 @@
 
 - name: Replace master config with with patched version
   copy:
-    remote_src: yes
+    remote_src: true
     src: /etc/origin/master/master-config.new.yaml
     dest: /etc/origin/master/master-config.yaml
-    backup: yes
+    backup: true
   register: replace_master_config
   become: true
 

@@ -10,7 +10,7 @@
     owner: root
     group: root
     mode: 0644
-    backup: yes
+    backup: true
   become: true
 
 - name: Copy hosts template
@@ -20,7 +20,7 @@
     owner: root
     group: root
     mode: 0644
-    backup: yes
+    backup: true
   become: true
 
 - name: Run OpenShift prerequisites

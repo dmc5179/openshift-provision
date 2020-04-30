@@ -51,7 +51,7 @@
 - name: Start and enable docker
   service:
     name: docker
-    enabled: yes
+    enabled: true
     state: started
   become: true
 
@@ -60,4 +60,4 @@
     src: "{{ ec2_key_file }}"
     dest: ~/.ssh/id_rsa
     mode: 0600
-    backup: yes
+    backup: true
