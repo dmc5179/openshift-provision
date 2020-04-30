@@ -4,13 +4,13 @@
   copy:
     src: master-config.patch
     dest: /etc/origin/master/master-config.patch
-  become: yes
+  become: true
 
 - name: Create new master config
   shell: oc ex config patch master-config.yaml --patch "$(cat master-config.patch)" --type merge > master-config.new.yaml
   args:
     chdir: /etc/origin/master/
-  become: yes
+  become: true
 
 - name: Replace master config with with patched version
   copy:
@@ -19,14 +19,14 @@
     dest: /etc/origin/master/master-config.yaml
     backup: yes
   register: replace_master_config
-  become: yes
+  become: true
 
 # TODO: delete master-config.new.yaml
 
 - name: Restart master API server and controllers
   shell: /usr/local/bin/master-restart api && /usr/local/bin/master-restart controllers
   when: replace_master_config.changed
-  become: yes
+  become: true
 
 - name: Wait for master API and controllers to become available
   command: oc version

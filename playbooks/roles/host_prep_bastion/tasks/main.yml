@@ -6,7 +6,7 @@
       - docker-1.13.1
     state: present
   when: (openshift_version | string) in ["3.9", "3.10", "3.11"]
-  become: yes
+  become: true
 
 - name: Install OpenShift playbooks (3.9)
   yum:
@@ -16,7 +16,7 @@
   when:
     - openshift_version_minor is not defined
     - (openshift_version | string) in ["3.9"]
-  become: yes
+  become: true
 
 - name: Install OpenShift playbooks (3.9) - minor version
   yum:
@@ -26,7 +26,7 @@
   when:
     - openshift_version_minor is defined
     - (openshift_version | string) in ["3.9"]
-  become: yes
+  become: true
 
 - name: Install OpenShift playbooks (3.10, 3.11)
   yum:
@@ -36,7 +36,7 @@
   when:
     - openshift_version_minor is not defined
     - (openshift_version | string) in ["3.10", "3.11"]
-  become: yes
+  become: true
 
 - name: Install OpenShift playbooks (3.10, 3.11) - minor version
   yum:
@@ -46,14 +46,14 @@
   when:
     - openshift_version_minor is defined
     - (openshift_version | string) in ["3.10", "3.11"]
-  become: yes
+  become: true
 
 - name: Start and enable docker
   service:
     name: docker
     enabled: yes
     state: started
-  become: yes
+  become: true
 
 - name: Copy EC2 key
   copy:

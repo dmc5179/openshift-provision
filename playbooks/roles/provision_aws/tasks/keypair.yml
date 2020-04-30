@@ -15,7 +15,7 @@
     owner: "{{ ansible_user_uid }}"
     group: "{{ ansible_user_gid }}"
     mode: 0700
-  become: yes
+  become: true
 
 - name: Output EC2 private key
   copy:
@@ -33,4 +33,4 @@
     owner: "{{ ansible_user_uid }}"
     group: "{{ ansible_user_gid }}"
     mode: 0600
-  become: yes
+  become: true

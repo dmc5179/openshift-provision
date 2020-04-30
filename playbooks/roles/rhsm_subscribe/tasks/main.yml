@@ -11,7 +11,7 @@
     consumer_name: "{{ rhsm_consumer_name | default(omit) }}"
     state: present
   retries: 3  # This seems to fail sometimes, so lets retry before failing everything
-  become: yes
+  become: true
 
 - name: Set Ansible version for required repos (OCP 3.11)
   set_fact:
@@ -24,7 +24,7 @@
     state: enabled
   retries: 3  # This seems to fail sometimes, so lets retry before failing everything
   register: openshift_enable_repos
-  become: yes
+  become: true
 
 - name: Disable non-required repositories
   rhsm_repository:
@@ -34,4 +34,4 @@
       difference(openshift_repos) }}"
     state: disabled
   retries: 3  # This seems to fail sometimes, so lets retry before failing everything
-  become: yes
+  become: true

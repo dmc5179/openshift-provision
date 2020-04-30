@@ -3,7 +3,7 @@
 - name: Create users
   command: htpasswd -b /etc/origin/master/htpasswd '{{ item.username }}' '{{ item.password }}'
   with_items: "{{ openshift_users }}"
-  become: yes
+  become: true
 
 - name: Create admin users
   command: oc adm policy add-cluster-role-to-user cluster-admin '{{ item.username }}'

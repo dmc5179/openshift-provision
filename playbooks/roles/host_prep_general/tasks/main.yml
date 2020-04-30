@@ -8,7 +8,7 @@
   retries: 3  # This seems to fail sometimes, so lets retry before failing everything
   until: update_all_packages.rc == 0
   register: update_all_packages
-  become: yes
+  become: true
 
 - block:
     - name: Reboot host
@@ -16,7 +16,7 @@
       async: 30
       poll: 0
       ignore_errors: yes
-      become: yes
+      become: true
 
     - name: Wait for nodes to boot
       wait_for:
@@ -34,4 +34,4 @@
       - vim
       - screen
     state: present
-  become: yes
+  become: true
