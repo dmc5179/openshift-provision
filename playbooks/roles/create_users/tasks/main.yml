@@ -1,5 +1,4 @@
 ---
-
 - name: Create users
   command: htpasswd -b /etc/origin/master/htpasswd '{{ item.username }}' '{{ item.password }}'
   with_items: "{{ openshift_users }}"

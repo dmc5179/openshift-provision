@@ -1,5 +1,4 @@
 ---
-
 - name: update nodes for Elasticsearch max_map_count
   copy:
     src: 99-elasticsearch.conf

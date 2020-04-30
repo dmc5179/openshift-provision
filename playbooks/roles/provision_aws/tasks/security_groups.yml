@@ -1,5 +1,4 @@
 ---
-
 - name: Create SSH security group
   ec2_group:
     name: "{{ cluster_name_verbose }}-ssh"

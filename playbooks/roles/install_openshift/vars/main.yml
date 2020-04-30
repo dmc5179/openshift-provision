@@ -1,5 +1,4 @@
 ---
-
 cluster_type: multi
 
 app_node_count: 2

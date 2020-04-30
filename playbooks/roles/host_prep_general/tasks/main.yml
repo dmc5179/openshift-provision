@@ -1,11 +1,10 @@
 ---
-
 - name: Update all packages
   yum:
     name: "*"
     state: latest
     exclude: atomic-openshift-ansible*,openshift-ansible*
-  retries: 3  # This seems to fail sometimes, so lets retry before failing everything
+  retries: 3 # This seems to fail sometimes, so lets retry before failing everything
   until: update_all_packages.rc == 0
   register: update_all_packages
   become: true

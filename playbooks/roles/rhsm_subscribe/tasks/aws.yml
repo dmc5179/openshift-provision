@@ -1,5 +1,4 @@
 ---
-
 - name: Disable amazon-id YUM plugin
   lineinfile:
     dest: /etc/yum/pluginconf.d/amazon-id.conf

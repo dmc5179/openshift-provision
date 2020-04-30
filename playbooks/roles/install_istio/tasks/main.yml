@@ -1,5 +1,4 @@
 ---
-
 - name: Copy master config patch file
   copy:
     src: master-config.patch
@@ -59,5 +58,4 @@
 
 - name: install the control plane
   command: oc create -n istio-system -f /tmp/istio-installation.yaml
-
 # TODO: delete istio-installation.yaml

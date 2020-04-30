@@ -1,5 +1,4 @@
 ---
-
 - name: Find Route53 hosted zone
   route53_facts:
     hosted_zone_id: "{{ route53_hosted_zone_id }}"

@@ -1,5 +1,4 @@
 ---
-
 - name: Get wildcard SSL cert for OpenShift router
   command: >-
     docker run --rm --name certbot

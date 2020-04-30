@@ -1,5 +1,4 @@
 ---
-
 - name: Find VPC
   ec2_vpc_net_facts:
     region: "{{ aws_region }}"

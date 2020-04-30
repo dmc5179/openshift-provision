@@ -1,5 +1,4 @@
 ---
-
 # There is a current bug with DNSmasq causing things to fail during an
 # OpenShift install. Installing/upgrading and then rebooting the nodes is
 # the current workaround.
@@ -30,7 +29,7 @@
 
 - name: Install Docker
   yum:
-    name: docker-1.13.1  # TODO: Make this a varible based on openshift_version
+    name: docker-1.13.1 # TODO: Make this a varible based on openshift_version
     state: present
   become: true
 
